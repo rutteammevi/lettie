@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .heading1 {
+    @apply text-heading1 leading-heading1 tracking-heading1 font-bold;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .mheading1 {
+    @apply text-mheading1 leading-mheading1 tracking-mheading1 font-bold;
+  }
+  .heading2 {
+    @apply text-heading2 leading-heading2 tracking-heading2 font-bold;
+  }
+  .mheading2 {
+    @apply text-mheading2 leading-mheading2 tracking-mheading2 font-bold;
+  }
+  .heading3 {
+    @apply text-heading3 leading-heading3 font-medium;
+  }
+  .mheading3 {
+    @apply text-mheading3 leading-mheading3 font-medium;
+  }
+  .heading4 {
+    @apply text-heading4 leading-heading4 font-medium text-darkgray;
+  }
+  .mheading4 {
+    @apply text-mheading4 leading-mheading4 font-medium text-darkgray;
+  }
+  .menu {
+    @apply text-menu leading-menu font-medium text-darkgray;
+  }
+  .mmenu {
+    @apply text-mmenu leading-mmenu font-medium text-darkgray;
+  }
+  .body {
+    @apply text-body leading-body  font-normal text-darkgray;
+  }
+  .mbody {
+    @apply text-mbody leading-mbody font-normal text-darkgray;
+  }
+  .input {
+    outline: none;
+  }
 }
