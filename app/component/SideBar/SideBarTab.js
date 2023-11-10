@@ -6,35 +6,31 @@ import {
   Heart,
   User,
   Palette,
-  Gear,
 } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+
+const LinkItem = ({ href, Icon, title }) => (
+  <Link href={href} className="flex items-center p-4 space-x-3">
+    <Icon width={28} height={28} className="text-lightgray" />
+    <p>{title}</p>
+  </Link>
+);
+
 export default function SideBarTab() {
+  const links = [
+    { href: "/start", Icon: MagicWand, title: "시작 도우미" },
+    { href: "/newsletter", Icon: Envelope, title: "뉴스레터" },
+    { href: "/intro", Icon: Pencil, title: "소개 페이지" },
+    { href: "/subscripe", Icon: Heart, title: "구독자" },
+    { href: "/admin", Icon: User, title: "관리자" },
+    { href: "/design", Icon: Palette, title: "디자인" },
+  ];
+
   return (
     <section className="px-8 space-y-[5px] menu mt-8">
-      <div className="flex items-center p-4 space-x-3">
-        <MagicWand width={28} height={28} className="text-lightgray" />
-        <p>시작 도우미</p>
-      </div>
-      <div className="flex items-center p-4 space-x-3">
-        <Envelope width={28} height={28} className="text-lightgray" />
-        <p>뉴스레터</p>
-      </div>
-      <div className="flex items-center p-4 space-x-3">
-        <Pencil width={28} height={28} className="text-lightgray" />
-        <p>소개 페이지</p>
-      </div>
-      <div className="flex items-center p-4 space-x-3">
-        <Heart width={28} height={28} className="text-lightgray" />
-        <p>구독자</p>
-      </div>
-      <div className="flex items-center p-4 space-x-3">
-        <User width={28} height={28} className="text-lightgray" />
-        <p>관리자</p>
-      </div>
-      <div className="flex items-center p-4 space-x-3">
-        <Palette width={28} height={28} className="text-lightgray" />
-        <p>디자인</p>
-      </div>
+      {links.map(({ href, Icon, title }) => (
+        <LinkItem key={href} href={href} Icon={Icon} title={title} />
+      ))}
     </section>
   );
 }

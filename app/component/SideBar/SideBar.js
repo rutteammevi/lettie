@@ -1,15 +1,7 @@
 import React from "react";
 import SideBarHeader from "./SideBarHeader";
 import SideBarTab from "./SideBarTab";
-import {
-  MagicWand,
-  Envelope,
-  Pencil,
-  Heart,
-  User,
-  Palette,
-  Gear,
-} from "@phosphor-icons/react/dist/ssr";
+import { Gear } from "@phosphor-icons/react/dist/ssr";
 export default function SideBar() {
   return (
     <div className="w-80 h-[100vh] border-r">
